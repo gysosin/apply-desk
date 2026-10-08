@@ -39,6 +39,11 @@ class ApplySignalsTest(unittest.TestCase):
                                "subject": "Follow up from Beta"})
         self.assertIsNone(store.applications(self.csv)[0]["outcome"])
 
+    def test_brackets_in_the_reason_do_not_break_the_outcome(self):
+        self.run_one(1, "rejection", "Not moving forward for Backend (Go)")
+        out = store.applications(self.csv)[1]["outcome"]
+        self.assertEqual((out["reason"], out["subject"]), ("Not moving forward for Backend Go", "Follow up from Beta"))
+
     def test_ack_on_drafted_marks_applied_with_email_date(self):
         self.run_one(0, "ack")
         acme = store.applications(self.csv)[0]

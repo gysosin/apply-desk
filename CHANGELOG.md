@@ -4,12 +4,28 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-Releases are vetted checkpoints of `master`. If you maintain a personalized fork,
+Releases are vetted checkpoints of `main`. If you maintain a personalized fork,
 prefer updating to a tagged release over pulling raw `master` (see
 [SETUP.md, section 8](SETUP.md#8-pulling-upstream-updates-into-your-fork)). The
 `framework_version` markers on methodology files tell you which of your customized
 files a release touched; `python3 tools/check_upstream_updates.py` lists them with
 per-file diff commands.
+
+## Apply Desk [0.1.0] - 2026-10-08
+
+First public release of Apply Desk, a self-hosted app on top of the AI Job Search framework.
+
+### Added
+
+- **Dashboard** (React): Today, Ready, Applied (Applied / Interview / Offer / Rejected / Skipped / Needs review), Draft from URL, Runs with live logs, Schedules, Settings; light, dark and mobile layouts.
+- **Daily search pipeline**: company career boards (Greenhouse, Ashby, Lever), LinkedIn, Instahyre and freehire; aggregator and reposter blocklist; dedup; triage; company-size filter; fit scoring against your deal-breakers; drafting with compile and layout verification.
+- **"Why this role?" answers** for every draft, with a copy button.
+- **Gmail tracking** over read-only IMAP: confirmations, assessments, interviews, offers and rejections move applications forward, with the reason quoted from the email. Incremental: only new mail is read.
+- **Interview prep** in one click.
+- **In-app scheduler**, ntfy phone alerts, Docker setup with local HTTPS.
+- **Claude access** through a Claude subscription (login or `claude setup-token`) or an Anthropic API key.
+- **Safety**: tool guard on every agent call, bubblewrap-sandboxed TeX, secrets outside the repo.
+- Guides: README, `docs/apply-desk.md`, `docs/claude-access.md`, the wiki, and a 45-second intro video.
 
 ## [Unreleased]
 

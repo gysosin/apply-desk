@@ -91,7 +91,7 @@ def apply_signals(results, mails, apps, path=None):
         company, role = (a["company"], a["role"]) if a else (_clean(r.get("company") or ""), _clean(r.get("role") or ""))
         if not (m and status and company and role):
             continue
-        reason = f" - {_clean(r['reason'])}" if r.get("reason") else ""
+        reason = f" - {_clean(re.sub(r'[()]', '', r['reason']))}" if r.get("reason") else ""  # brackets would end the reason early
         when, note = (m["date"] or "")[:10], f"gmail: {r['signal']}{reason} ({_clean(m['subject'])})"
         if not a and store.add_row({"date": when, "company": company, "role": role, "channel": "online", "status": status,
                                     "notes": f"Added by Gmail check{f' | applied {when}' if status == 'applied' else ''} | {when} {note}"}, path):

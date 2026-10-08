@@ -127,3 +127,11 @@ app/web/node_modules/
 app/web/dist/
 .playwright-mcp/
 job_scraper/overnight_pool_*.json
+
+# Launch-video build folder (render output and sources)
+brag-output*/
+
+# Public docs media (fictional demo data only) and the env template (no secrets)
+!app/.env.example
+!docs/images/*.png
+!docs/media/*.jpg

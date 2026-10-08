@@ -8,7 +8,7 @@ about: A defect or improvement in the framework itself — not your personal job
      default (`gh repo fork --clone` sets it as the default repository).
      Personal application tracking, job evaluations, and incident logs
      belong in YOUR fork or private repo - this tracker is public. Run
-     `gh repo set-default <your-username>/ai-job-search` in your clone to
+     `gh repo set-default <your-username>/apply-desk` in your clone to
      keep your own automation pointed home (SETUP.md, section 2). -->
 
 ## Description

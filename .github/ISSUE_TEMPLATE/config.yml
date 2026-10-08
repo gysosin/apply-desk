@@ -1,9 +1,11 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Filing from a personalized fork? Read this first
-    url: https://github.com/MadsLorentzen/ai-job-search/blob/master/SETUP.md#2-fork-and-clone
+  - name: Read this first if you work from a personal copy
+    url: https://github.com/gysosin/apply-desk/blob/main/SETUP.md#2-fork-and-clone
     about: >-
-      The gh CLI in a fork clone targets THIS public repo by default. Personal
-      application tracking, evaluations, and incident logs belong in your own
-      fork or private repo — run `gh repo set-default <you>/ai-job-search`
-      there to keep your automation pointed home.
+      This tracker is public. Never paste your tracker rows, emails, CV text or
+      config here. In your own clone run `gh repo set-default <you>/apply-desk`
+      so the gh CLI keeps your automation pointed at your copy.
+  - name: Security issue
+    url: https://github.com/gysosin/apply-desk/security/advisories/new
+    about: Report vulnerabilities privately, never in a public issue.

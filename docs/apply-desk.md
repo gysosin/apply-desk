@@ -1,5 +1,9 @@
 # Using Apply Desk
 
+![The Ready page](images/ready.png)
+
+More: the [wiki](https://github.com/gysosin/apply-desk/wiki) covers every feature in depth.
+
 ## Daily use
 
 1. **Today:** what's new, how many applications are waiting, and applications sent per week.
@@ -11,6 +15,8 @@
 7. **Settings:** fit score, drafts per run, minimum company size, models, notifications and Gmail.
 
 ## Gmail replies
+
+![Applied page with outcomes from Gmail](images/applied.png)
 
 1. Turn on 2-step verification in your Google account and create an **app password** (Google Account → Security → App passwords).
 2. Settings → Gmail: enter your address and the app password, turn on **Check Gmail**, then turn on the Gmail schedule.
