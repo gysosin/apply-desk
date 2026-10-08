@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Apply Desk">
+  <rect width="32" height="32" rx="7.5" fill="#004143"/>
+  <path d="M10 7.5h8.5l4 4V24a.5.5 0 0 1-.5.5H10a.5.5 0 0 1-.5-.5V8a.5.5 0 0 1 .5-.5Z" fill="none" stroke="#f7fbfb" stroke-width="1.8" stroke-linejoin="round" opacity=".9"/>
+  <path d="M13 15h6.5M13 19h4" stroke="#f7fbfb" stroke-width="1.8" stroke-linecap="round" opacity=".9"/>
+  <circle cx="22.5" cy="23" r="4.25" fill="#ec6100" stroke="#004143" stroke-width="1.5"/>
+</svg>

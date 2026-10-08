@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Apply Desk tokens, copied from Crawl Hub so both apps share one look.
+ * Deep-teal ink + ONE orange accent (--brand) on cool neutrals.
+ * Status colours (success / warning / destructive) are semantic, never decorative,
+ * and are always paired with an icon + label.
+ * Shape rule: buttons + badges full pill; inputs 8px (rounded-lg); panels are double-bezel
+ * trays of 20px outer / 15px inner radius (utilities `bezel` + `bezel-core`).
+ */
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+    --color-brand: var(--brand);
+    --color-brand-ink: var(--brand-ink);
+    --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-stock: var(--stock);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.5);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    --radius: 0.5rem;
+    --background: oklch(0.975 0.004 200);
+    --foreground: oklch(0.22 0.03 200);
+    --card: oklch(0.995 0.002 200);
+    --card-foreground: oklch(0.22 0.03 200);
+    --popover: oklch(0.995 0.002 200);
+    --popover-foreground: oklch(0.22 0.03 200);
+    --primary: oklch(0.34 0.06 198);
+    --primary-foreground: oklch(0.985 0.004 200);
+    --secondary: oklch(0.945 0.008 200);
+    --secondary-foreground: oklch(0.26 0.03 200);
+    --muted: oklch(0.945 0.008 200);
+    --muted-foreground: oklch(0.48 0.02 200);
+    --accent: oklch(0.94 0.01 200);
+    --accent-foreground: oklch(0.22 0.03 200);
+    --brand: oklch(0.66 0.19 45);
+    --brand-ink: oklch(0.52 0.16 42);
+    --success: oklch(0.52 0.12 158);
+    --warning: oklch(0.58 0.13 70);
+    --destructive: oklch(0.55 0.2 27);
+    --border: oklch(0.905 0.008 200);
+    --input: oklch(0.88 0.01 200);
+    --ring: oklch(0.62 0.16 45);
+    --chart-1: #008c9e; /* validated with dataviz validate_palette.js (light) */
+    --chart-2: oklch(0.66 0.19 45);
+    --chart-3: #cc2827;
+    --chart-4: oklch(0.7 0.05 198);
+    --chart-5: oklch(0.8 0.02 200);
+    --stock: #6f5bd0; /* Out Of Stock: validated with chart-1 + chart-3 and with success + destructive (light) */
+    --sidebar: oklch(0.96 0.006 200);
+    --sidebar-foreground: oklch(0.26 0.03 200);
+    --sidebar-primary: oklch(0.34 0.06 198);
+    --sidebar-primary-foreground: oklch(0.985 0.004 200);
+    --sidebar-accent: oklch(0.92 0.012 200);
+    --sidebar-accent-foreground: oklch(0.2 0.03 200);
+    --sidebar-border: oklch(0.905 0.008 200);
+    --sidebar-ring: oklch(0.62 0.16 45);
+}
+
+.dark {
+    --background: oklch(0.17 0.012 205);
+    --foreground: oklch(0.95 0.008 200);
+    --card: oklch(0.205 0.014 205);
+    --card-foreground: oklch(0.95 0.008 200);
+    --popover: oklch(0.225 0.015 205);
+    --popover-foreground: oklch(0.95 0.008 200);
+    --primary: oklch(0.82 0.08 185);
+    --primary-foreground: oklch(0.2 0.03 200);
+    --secondary: oklch(0.27 0.015 205);
+    --secondary-foreground: oklch(0.95 0.008 200);
+    --muted: oklch(0.26 0.014 205);
+    --muted-foreground: oklch(0.73 0.015 200);
+    --accent: oklch(0.28 0.016 205);
+    --accent-foreground: oklch(0.96 0.008 200);
+    --brand: oklch(0.73 0.17 50);
+    --brand-ink: oklch(0.78 0.15 52);
+    --success: oklch(0.74 0.13 158);
+    --warning: oklch(0.8 0.13 78);
+    --destructive: oklch(0.7 0.17 25);
+    --border: oklch(1 0 0 / 9%);
+    --input: oklch(1 0 0 / 14%);
+    --ring: oklch(0.73 0.17 50);
+    --chart-1: #00a9a2; /* validated (dark, surface #10191a) */
+    --chart-2: oklch(0.73 0.17 50);
+    --chart-3: #e55551;
+    --chart-4: oklch(0.55 0.05 198);
+    --chart-5: oklch(0.4 0.02 200);
+    --stock: #9b7fe6; /* validated with chart-1 + chart-3 (dark, surface #10191a) */
+    --sidebar: oklch(0.19 0.013 205);
+    --sidebar-foreground: oklch(0.92 0.008 200);
+    --sidebar-primary: oklch(0.82 0.08 185);
+    --sidebar-primary-foreground: oklch(0.2 0.03 200);
+    --sidebar-accent: oklch(0.26 0.016 205);
+    --sidebar-accent-foreground: oklch(0.96 0.008 200);
+    --sidebar-border: oklch(1 0 0 / 8%);
+    --sidebar-ring: oklch(0.73 0.17 50);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans antialiased;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground;
+    touch-action: manipulation;
+  }
+}
+
+@utility num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Spring-like easing used for every transition in the app. */
+@theme {
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --animate-rise: rise 0.7s var(--ease-spring) both;
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Double-bezel panel: a hairline outer tray with a raised inner plate. */
+@utility bezel {
+  border-radius: 1.25rem;
+  padding: 0.3125rem;
+  background: color-mix(in oklch, var(--foreground) 3.5%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 6%, transparent);
+}
+@utility bezel-core {
+  border-radius: calc(1.25rem - 0.3125rem);
+  background: var(--card);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklch, white 55%, transparent),
+    0 1px 2px color-mix(in oklch, var(--primary) 6%, transparent),
+    0 12px 32px -12px color-mix(in oklch, var(--primary) 14%, transparent);
+}
+.dark .bezel-core {
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklch, white 7%, transparent),
+    0 12px 32px -12px oklch(0 0 0 / 50%);
+}
+
+/* Page content rises in, children staggered via --i. */
+.rise > * {
+  animation: var(--animate-rise);
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+.rise > :nth-child(2) { --i: 1; }
+.rise > :nth-child(3) { --i: 2; }
+.rise > :nth-child(4) { --i: 3; }
+.rise > :nth-child(5) { --i: 4; }
+.rise > :nth-child(n + 6) { --i: 5; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

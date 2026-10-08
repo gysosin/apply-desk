@@ -1,0 +1,13 @@
+# Pre-audited CV bullets the drafting agent may reuse verbatim (or trim). Replace these examples with your own.
+# Every bullet must be true and backed by .claude/skills/job-application-assistant/01-candidate-profile.md.
+# Keys are short handles; values are LaTeX-ready strings.
+
+JOB1={
+'example':r"Built [WHAT] with [STACK], [MEASURABLE RESULT, e.g. cutting latency \textasciitilde{}30\%].",
+}
+JOB2={
+'example':r"Shipped [PRODUCT] serving [N] users ([STACK]).",
+}
+PRJ={
+'example':r"\textbf{[Project name]}: [one line on what it does and the stack].",
+}

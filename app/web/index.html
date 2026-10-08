@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply Desk</title>
+    <meta name="description" content="Today's tailored job applications, ready to send." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f5f8f8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d1517" media="(prefers-color-scheme: dark)" />
+    <script>
+      // Set the theme before first paint so dark mode never flashes light.
+      try {
+        var t = localStorage.getItem('theme') || 'system';
+        var dark = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
